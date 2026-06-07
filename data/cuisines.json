@@ -1,0 +1,42 @@
+[
+  {
+    "id": "italian",
+    "name": "Italian",
+    "icon": "🍝"
+  },
+  {
+    "id": "mexican",
+    "name": "Mexican",
+    "icon": "🌮"
+  },
+  {
+    "id": "japanese",
+    "name": "Japanese",
+    "icon": "🍣"
+  },
+  {
+    "id": "indian",
+    "name": "Indian",
+    "icon": "🍛"
+  },
+  {
+    "id": "burger",
+    "name": "Burgers",
+    "icon": "🍔"
+  },
+  {
+    "id": "pizza",
+    "name": "Pizza",
+    "icon": "🍕"
+  },
+  {
+    "id": "cafe",
+    "name": "Cafe & Bakery",
+    "icon": "☕"
+  },
+  {
+    "id": "dessert",
+    "name": "Dessert",
+    "icon": "🍨"
+  }
+]
