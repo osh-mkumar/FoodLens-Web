@@ -1,6 +1,7 @@
 "use server";
 
 import fs from "fs";
+import path from "path";
 import { Restaurant } from "./recommendation";
 
 export interface CuisineStat {
@@ -48,9 +49,9 @@ function parseCSVLine(line: string): string[] {
 }
 
 export async function getAnalyticsData(): Promise<AnalyticsData> {
-  const restsPath = 'd:\\zomato food data\\foodlens\\data\\restaurants.csv';
-  const cuisinesCsvPath = 'd:\\zomato food data\\foodlens\\data\\cuisines.csv';
-  const restCuisinesPath = 'd:\\zomato food data\\foodlens\\data\\restaurant_cuisines.csv';
+  const restsPath = path.join(process.cwd(), "data", "restaurants.csv");
+  const cuisinesCsvPath = path.join(process.cwd(), "data", "cuisines.csv");
+  const restCuisinesPath = path.join(process.cwd(), "data", "restaurant_cuisines.csv");
 
   // 1. Load cuisines map
   const cuisineIdToName: Record<number, string> = {};

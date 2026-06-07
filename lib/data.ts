@@ -14,7 +14,7 @@ export async function getCuisinesWithCounts(): Promise<CuisineData[]> {
   const baseCuisines = JSON.parse(fs.readFileSync(cuisinesJsonPath, 'utf8'));
 
   // 2. Load cuisine numeric IDs from cuisines.csv
-  const cuisinesCsvPath = 'd:\\zomato food data\\foodlens\\data\\cuisines.csv';
+  const cuisinesCsvPath = path.join(process.cwd(), "data", "cuisines.csv");
   const cuisinesCsvData = fs.readFileSync(cuisinesCsvPath, 'utf8').split('\n');
   
   // Map string name -> numeric ID (e.g. 'italian' -> 16)
@@ -29,7 +29,7 @@ export async function getCuisinesWithCounts(): Promise<CuisineData[]> {
   }
 
   // 3. Count occurrences in restaurant_cuisines.csv
-  const restCuisinesPath = 'd:\\zomato food data\\foodlens\\data\\restaurant_cuisines.csv';
+  const restCuisinesPath = path.join(process.cwd(), "data", "restaurant_cuisines.csv");
   const restCuisinesData = fs.readFileSync(restCuisinesPath, 'utf8').split('\n');
   
   const cuisineCounts: Record<number, number> = {};
@@ -68,7 +68,7 @@ export async function getCuisinesWithCounts(): Promise<CuisineData[]> {
 }
 
 export async function getBudgetRange(): Promise<{ min: number; max: number }> {
-  const restsPath = 'd:\\zomato food data\\foodlens\\data\\restaurants.csv';
+  const restsPath = path.join(process.cwd(), "data", "restaurants.csv");
   const data = fs.readFileSync(restsPath, 'utf8').split('\n');
   
   let min = Infinity;
